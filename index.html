@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Python,Java,JavaScript" />
+    <meta name="descrition" content="Fatih Konuk | Web Design" />
+    <title>Fatih Konuk | Web Design</title>
+
+    <!-- Google Fonts -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+    </style>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Swiper JS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+
+    <!-- Css Files -->
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Tablet - Mobile -->
+    <link
+      rel="stylesheet"
+      media="screen and (max-width:768px)"
+      href="css/tablet.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width:500px)"
+      href="css/mobile.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="innerBox">
+        <a href="index.html" id="logo">Design</a>
+        <ul>
+          <li><a href="#home" id="linkHome">Home</a></li>
+          <li><a href="#services" id="linkServices">Services</a></li>
+          <li><a href="#contact" id="linkContact">Contact</a></li>
+          <li><a href="#team" id="linkTeam">Teams</a></li>
+        </ul>
+        <i class="fa-solid fa-user" id="user-logo"></i>
+      </nav>
+    </header>
+    
+    
+    <section class="home">
+      <a name="home"></a>
+      <div class="bg"></div>
+      <div class="innerBox">
+        <h1>Welcome To Our Web Page</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          Nemo pariatur officiis quae neque nobis a reprehenderit 
+          dignissimos veritatis vel aperiam.
+        </p>
+      </div>
+    </section>
+
+
+    <section class="services">
+      <a name="services"></a>
+      <div class="innerBox">
+        <h2>Our Web Services</h2>
+        <div class="left-side">
+          <div id="designPart" class="part" tabindex="10">Design</div>
+          <div id="hostingPart" class="part" tabindex="11">Hosting</div>
+          <div id="domainPart" class="part" tabindex="12">Domain</div>
+          <div id="morePart" class="part" tabindex="13">More</div>
+        </div>
+        <div id="displayWindow" class="right-side"></div>
+      </div>
+    </section>
+    
+    <section class="contact">
+      <a name="contact"></a>
+      <div class="map"></div>
+      <div class="right-box">
+        <h2>CONTACT</h2>
+        <div class="contactInfo">
+          <i class="fa-solid fa-location-dot"><span> İstanbul, Türkiye</span></i>
+          <i class="fa-solid fa-phone"><span>Phone: 444 1 444</span></i>
+          <i class="fa-solid fa-envelope"><span>Email: info@mail.com</span></i>
+        </div>
+        <div class="form">
+          <input type="text" placeholder="Name">
+          <input type="text" placeholder="Email">
+          <input type="text" id="message" placeholder="Message">
+          <button type="submit" id="button">SEND</button>
+        </div>
+      </div>
+    </section>
+    
+    <section class="team">
+      <a name="team"></a>
+      <h2>Our Team Members</h2>
+      <div class="outBox">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><div class="member member1">
+              <div class="banner">
+                <div class="photo"></div>
+              </div>
+              <div class="personInfo">
+                <h3>Fatih Konuk</h3>
+                <p>Software Engineer</p>
+              </div>
+            </div></div>
+            <div class="swiper-slide"><div class="member member2">
+              <div class="banner">
+                <div class="photo"></div>
+              </div>
+              <div class="personInfo">
+                <h3>Fatih Konuk</h3>
+                <p>Software Engineer</p>
+              </div>
+            </div></div>
+            <div class="swiper-slide"><div class="member member3">
+              <div class="banner">
+                <div class="photo"></div>
+              </div>
+              <div class="personInfo">
+                <h3>Fatih Konuk</h3>
+                <p>Software Engineer</p>
+              </div>
+            </div></div>
+            <div class="swiper-slide"><div class="member member4">
+              <div class="banner">
+                <div class="photo"></div>
+              </div>
+              <div class="personInfo">
+                <h3>Fatih Konuk</h3>
+                <p>Software Engineer</p>
+              </div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </footer>
+
+    <script>
+      window.addEventListener("scroll", function(){
+        var header = document.querySelector("header");
+        var linkHome = document.getElementById("linkHome");
+        var linkServices = document.getElementById("linkServices");
+        var linkContact = document.getElementById("linkContact");
+        var linkTeam = document.getElementById("linkTeam");
+
+        header.classList.toggle("sticky", window.scrollY > 0);
+        linkHome.classList.toggle("active",  window.scrollY < 500);
+        linkServices.classList.toggle("active", window.scrollY >= 500 && window.scrollY < 1200);
+        linkContact.classList.toggle("active", window.scrollY >= 1200 && window.scrollY < 1800);
+        linkTeam.classList.toggle("active", window.scrollY >= 1800);
+      })
+
+      var designPart = document.getElementById("designPart");
+      var hostingPart = document.getElementById("hostingPart");
+      var domainPart = document.getElementById("domainPart");
+      var morePart = document.getElementById("morePart");
+      var displayWindow = document.getElementById("displayWindow");
+
+      designPart.addEventListener('click', () =>{
+        displayWindow.classList.toggle('designPart')
+        displayWindow.classList.remove('hostingPart')
+        displayWindow.classList.remove('domainPart')
+        displayWindow.classList.remove('morePart')
+      })
+
+      hostingPart.addEventListener('click', () =>{
+        displayWindow.classList.toggle('hostingPart')
+        displayWindow.classList.remove('designPart')
+        displayWindow.classList.remove('domainPart')
+        displayWindow.classList.remove('morePart')
+      })
+
+      domainPart.addEventListener('click', () =>{
+        displayWindow.classList.toggle('domainPart')
+        displayWindow.classList.remove('designPart')
+        displayWindow.classList.remove('hostingPart')
+        displayWindow.classList.remove('morePart')
+      })
+
+      morePart.addEventListener('click', () =>{
+        displayWindow.classList.toggle('morePart')
+        displayWindow.classList.remove('designPart')
+        displayWindow.classList.remove('domainPart')
+        displayWindow.classList.remove('hostingPart')
+      })
+    </script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 200,
+        modifier: 1,
+        slideShadows: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        loop: true,
+      });
+    </script>
+  </body>
+</html>
