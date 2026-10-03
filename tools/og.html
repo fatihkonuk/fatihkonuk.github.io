@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1200">
+<meta name="robots" content="noindex, nofollow">
+<title>OG görseli kaynağı</title>
+<!-- OG görsellerinin (1200×630) kaynağı. ?lang=en İngilizce unvanı gösterir. Üretim adımı README'de. -->
+<link rel="preload" href="/assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+  html, body { margin: 0; }
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    align-items: center;
+    column-gap: 64px;
+    padding: 0 88px;
+  }
+  .og-photo img { width: 280px; height: 280px; border-radius: 2px; object-fit: cover; }
+  .og-name {
+    font-size: 92px;
+    white-space: nowrap;
+    font-weight: 800;
+    font-stretch: 125%;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+  }
+  .og-title { margin-top: 22px; font-size: 38px; font-weight: 500; }
+  .og-url {
+    margin-top: 40px;
+    color: var(--muted);
+    font-size: 26px;
+    font-stretch: 75%;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="og-photo"><img src="/assets/img/profil-352.jpg" width="352" height="352" alt=""></div>
+  <div>
+    <p class="og-name">Fatih Konuk</p>
+    <p class="og-title" id="title">Full-Stack Yazılım Geliştirici</p>
+    <p class="og-url">fatihkonuk.github.io</p>
+  </div>
+<script>
+  if (/[?&]lang=en\b/.test(location.search)) {
+    document.documentElement.lang = "en";
+    document.getElementById("title").textContent = "Full-Stack Software Developer";
+  }
+</script>
+</body>
+</html>
