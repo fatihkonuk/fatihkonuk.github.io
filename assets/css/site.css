@@ -629,6 +629,27 @@ h3.sub + .featured,
 /* Canlı link kartın dibine oturur */
 .cp .ext-links { margin-top: auto; padding-top: 0.5rem; }
 
+/* ---------- Teknoloji ikonları ----------
+   Varsayılan tek renk (metin tonu); üzerine gelince/dokununca marka rengi.
+   --bl / --bd: icons.js'in verdiği, açık/koyu zeminde en az 3:1 olan marka renkleri. */
+.tags li { display: inline-flex; align-items: center; gap: 0.3em; }
+.ti {
+  flex: none;
+  width: 0.95em;
+  height: 0.95em;
+  fill: currentColor;
+  transition: color 180ms ease-out;
+}
+.tags li:hover .ti,
+.tags li.tap .ti { color: var(--bl); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .tags li:hover .ti,
+  :root:not([data-theme="light"]) .tags li.tap .ti { color: var(--bd); }
+}
+:root[data-theme="dark"] .tags li:hover .ti,
+:root[data-theme="dark"] .tags li.tap .ti { color: var(--bd); }
+@media (prefers-reduced-motion: reduce) { .ti { transition: none; } }
+
 /* ---------- Yetenekler: raf düzeni ---------- */
 .skills {
   display: grid;

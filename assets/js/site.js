@@ -74,6 +74,26 @@
     Array.prototype.forEach.call(targets, function (t) { io.observe(t); });
   }
 
+  // Teknoloji ikonları: ilk etiket listesi görünüme yaklaşınca icons.js yüklenir (sprite da o zaman iner).
+  var tagLists = document.querySelectorAll(".tags");
+  var loadIcons = function () {
+    if (loadIcons.done) return;
+    loadIcons.done = true;
+    var s = document.createElement("script");
+    s.src = "/assets/js/icons.js";
+    document.head.appendChild(s);
+  };
+  if (tagLists.length) {
+    if ("IntersectionObserver" in window) {
+      var tio = new IntersectionObserver(function (entries) {
+        if (entries.some(function (e) { return e.isIntersecting; })) { tio.disconnect(); loadIcons(); }
+      }, { rootMargin: "0px 0px 150px 0px" });
+      Array.prototype.forEach.call(tagLists, function (t) { tio.observe(t); });
+    } else {
+      loadIcons();
+    }
+  }
+
   // İletişim formu: JS varken fetch + JSON; yoksa normal POST (redirect → #sent).
   var form = document.querySelector(".form");
   if (form && window.fetch && window.FormData) {
