@@ -30,8 +30,29 @@
     letter-spacing: -0.01em;
   }
   .og-title { margin-top: 22px; font-size: 38px; font-weight: 500; }
+  /* Kariyer şeridinden bir kesit: kırmızı bar + mürekkep "devam ediyor" noktası */
+  .og-bar {
+    position: relative;
+    width: 300px;
+    height: 16px;
+    margin-top: 34px;
+    background: var(--accent);
+    border-radius: 1px;
+  }
+  .og-bar::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -12px;
+    width: 24px;
+    height: 24px;
+    margin-top: -12px;
+    border-radius: 50%;
+    background: var(--ink);
+    box-shadow: 0 0 0 4px var(--bench);
+  }
   .og-url {
-    margin-top: 40px;
+    margin-top: 30px;
     color: var(--muted);
     font-size: 26px;
     font-stretch: 75%;
@@ -44,6 +65,7 @@
   <div>
     <p class="og-name">Fatih Konuk</p>
     <p class="og-title" id="title">Full-Stack Yazılım Geliştirici</p>
+    <div class="og-bar" aria-hidden="true"></div>
     <p class="og-url">fatihkonuk.github.io</p>
   </div>
 <script>

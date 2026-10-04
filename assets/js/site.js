@@ -55,7 +55,7 @@
   });
   each(".skills > div", function (d, i) { d.style.setProperty("--si", i); });
 
-  var targets = document.querySelectorAll(".lanes, .job, .skills");
+  var targets = document.querySelectorAll(".lanes, .job, .feat, .cp, .skills");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduce || !("IntersectionObserver" in window)) {
     Array.prototype.forEach.call(targets, function (t) { t.classList.add("in"); });
@@ -64,7 +64,9 @@
       var k = 0;
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
-        if (e.target.classList.contains("job")) e.target.style.setProperty("--d", k++ * 90 + "ms");
+        var c = e.target.classList;
+        if (c.contains("job") || c.contains("cp")) e.target.style.setProperty("--d", k++ * 90 + "ms");
+        else if (c.contains("feat")) e.target.style.setProperty("--d", k++ * 120 + "ms");
         e.target.classList.add("in");
         io.unobserve(e.target);
       });
