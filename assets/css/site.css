@@ -902,7 +902,7 @@ a.brand { text-decoration: none; }
 
   .client { gap: var(--gap); }
 
-  .skills { grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: var(--gap); }
+  .skills { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--gap); }
 
   .contact-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 34rem);
