@@ -11,9 +11,10 @@ index.html, en/index.html   Türkçe ve İngilizce sayfalar
 404.html                    hata sayfası
 assets/css, assets/js       stil ve betikler
 assets/img, assets/fonts    görseller, ikon sprite'ı, yazı tipi
-cv/                         CV (PDF)
 tools/og.html               paylaşım görselinin kaynağı
 ```
+
+CV PDF'leri bu repoda değil, portfolio sitesinde: CV butonları `https://fatihkonuk.dev/cv/` altındaki dosyalara bağlanır.
 
 ## Yerelde çalıştırma
 
