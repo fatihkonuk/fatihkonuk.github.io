@@ -485,6 +485,11 @@ h1 {
   margin-top: 0.625rem;
   max-width: var(--measure);
 }
+/* Aynı şirketteki roller: rol adı alt başlık, altında kendi tarihi ve türü */
+.stint { margin-top: 0.875rem; }
+.stint + .stint { margin-top: 1.75rem; }
+.stint .role { color: var(--ink); font-weight: 600; }
+.stint .kind { margin-top: 0.15rem; }
 .desc a { color: var(--accent); }
 .desc a:hover { color: var(--ink); }
 
